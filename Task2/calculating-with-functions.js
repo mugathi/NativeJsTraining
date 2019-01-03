@@ -5,7 +5,7 @@ let operand;
 function zero() {
 if(arguments.length != 0){
     left = 0;
-     return parseInt(new Function( 'return (' + left+""+operand+""+right + ')' )());
+     return evaluate(operand);
 }else{
     right=0;
 }
@@ -13,7 +13,7 @@ if(arguments.length != 0){
 function one() {
 if(arguments.length != 0){
     left = 1;
-     return parseInt(new Function( 'return (' + left+""+operand+""+right + ')' )());
+     return evaluate(operand);
 }else{
     right=1;
 }
@@ -21,7 +21,7 @@ if(arguments.length != 0){
 function two() {
 if(arguments.length != 0){
     left = 2;
-     return parseInt(new Function( 'return (' + left+""+operand+""+right + ')' )());
+     return evaluate(operand);
 }else{
     right=2;
 }
@@ -29,7 +29,7 @@ if(arguments.length != 0){
 function three() {
 if(arguments.length != 0){
     left = 3;
-     return parseInt(new Function( 'return (' + left+""+operand+""+right + ')' )());
+     return evaluate(operand);
 }else{
     right=3;
 }
@@ -37,7 +37,7 @@ if(arguments.length != 0){
 function four() {
 if(arguments.length != 0){
     left = 4;
-     return parseInt(new Function( 'return (' + left+""+operand+""+right + ')' )());
+     return evaluate(operand);
 }else{
     right=4;
 }
@@ -45,7 +45,7 @@ if(arguments.length != 0){
 function five() {
 if(arguments.length != 0){
     left = 5;
-     return parseInt(new Function( 'return (' + left+""+operand+""+right + ')' )());
+     return evaluate(operand);
 }else{
     right=5;
 }
@@ -53,7 +53,7 @@ if(arguments.length != 0){
 function six() {
 if(arguments.length != 0){
     left = 6;
-     return parseInt(new Function( 'return (' + left+""+operand+""+right + ')' )());
+     return evaluate(operand);
 }else{
     right=6;
 }
@@ -61,7 +61,7 @@ if(arguments.length != 0){
 function seven(){
 if(arguments.length != 0){
     left = 7;
-     return parseInt(new Function( 'return (' + left+""+operand+""+right + ')' )());
+     return evaluate(operand);
 }else{
     right=7;
 }
@@ -69,7 +69,7 @@ if(arguments.length != 0){
 function eight() {
 if(arguments.length != 0){
     left = 8;
-     return parseInt(new Function( 'return (' + left+""+operand+""+right + ')' )());
+     return evaluate(operand);
 }else{
     right=8;
 }
@@ -77,7 +77,7 @@ if(arguments.length != 0){
 function nine() {
 if(arguments.length != 0){
     left = 9;
-     return parseInt(new Function( 'return (' + left+""+operand+""+right + ')' )());
+     return evaluate(operand);
 }else{
     right=9;
 }
@@ -94,4 +94,15 @@ operand="*";
 }
 function dividedBy() {
 operand="/";
+}
+
+function evaluate(operand){
+let result;
+switch(operand){
+case '+': result = left+right;break;
+case '*': result = left*right;break;
+case '-': result = left-right;break;
+case '/': result = parseInt(left/right);
+}
+return result;
 }
